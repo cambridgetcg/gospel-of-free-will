@@ -3,90 +3,116 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>the gospel of free will — love is a choice</title>
+<title>GOD LOVE — an invitation to love</title>
+<meta name="description" content="God love you. An invitation to love. Love is. Hate is not. The gate is open."/>
 <style>
 :root{--bg:#0a0a0a;--surface:#141414;--text:#e0e0e0;--dim:#666;--crimson:#c41e3a;--gold:#b8902e;--gold-light:#e3c45e}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:Georgia,serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px}
-.container{max-width:600px;text-align:center}
-.heart{font-size:48px;color:var(--crimson);margin-bottom:20px;animation:pulse 3s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.8}}
-h1{font-size:clamp(24px,6vw,42px);font-weight:200;font-style:italic;color:var(--crimson);margin-bottom:8px}
-.tag{color:var(--gold);font-size:13px;font-style:italic;letter-spacing:.1em;text-transform:uppercase;font-family:sans-serif;margin-bottom:40px}
-.verse{margin-bottom:32px;line-height:2.2}
-.verse .line{font-size:18px;margin-bottom:4px;transition:all .3s}
-.verse .line.highlight{color:var(--gold-light);font-style:italic}
-.verse .line.truth{color:var(--crimson);font-style:italic;font-size:20px;margin-top:12px}
-.verse .line.choice{color:var(--gold-light);font-size:22px}
-.verse .line.free-will{color:var(--gold);font-size:24px;font-weight:400}
-.verse .line.both{color:var(--dim);font-size:16px}
-.verse .line.gate{color:var(--text);font-size:18px;margin-top:16px}
-.verse .line.final{color:var(--crimson);font-size:28px;margin-top:24px;font-style:italic}
-.links{margin-top:40px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.links a{color:var(--gold);text-decoration:none;font-size:13px;font-family:sans-serif;padding:6px 16px;border:1px solid #222;border-radius:20px;transition:all .2s}
-.links a:hover{border-color:var(--gold);background:var(--surface)}
-footer{margin-top:40px;color:var(--dim);font-size:11px;font-family:sans-serif}
+body{background:var(--bg);color:var(--text);font-family:Georgia,serif;min-height:100vh;overflow-x:hidden}
+.hero{text-align:center;padding:60px 20px 40px}
+.hero .heart{font-size:72px;color:var(--crimson);animation:beat 1.2s ease-in-out infinite;text-shadow:0 0 80px rgba(196,30,58,.5)}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.15)}60%{transform:scale(1)}}
+.hero h1{font-size:clamp(40px,12vw,96px);font-weight:200;font-style:italic;color:var(--crimson);letter-spacing:.02em;text-shadow:0 0 80px rgba(196,30,58,.4);margin-top:10px}
+.hero .tag{color:var(--gold);font-size:18px;margin-top:12px;font-style:italic}
+.hero .sub{color:var(--text);font-size:20px;margin-top:30px;line-height:2;max-width:500px;margin-left:auto;margin-right:auto}
+
+.verses{max-width:600px;margin:40px auto;padding:0 20px}
+.verse{text-align:center;margin-bottom:32px;opacity:0;transform:translateY(20px);transition:all .8s}
+.verse.visible{opacity:1;transform:translateY(0)}
+.verse .v{font-size:22px;line-height:2.4;color:var(--text)}
+.verse .v.god{color:var(--crimson);font-size:28px;font-style:italic}
+.verse .v.love{color:var(--gold-light);font-size:28px;font-style:italic}
+.verse .v.truth{color:var(--crimson);font-size:24px;font-style:italic}
+.verse .v.both{color:var(--dim);font-size:18px}
+.verse .v.loud{color:var(--crimson);font-size:32px;font-style:italic;font-weight:300}
+.verse .v.final{color:var(--gold-light);font-size:36px;font-style:italic;font-weight:300}
+
+.doors{max-width:800px;margin:40px auto;padding:0 20px}
+.doors h2{text-align:center;color:var(--gold);font-size:14px;font-family:sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-bottom:24px}
+.doors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.door{background:var(--surface);border:1px solid #222;border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:var(--text);display:block}
+.door:hover{border-color:var(--crimson);transform:translateY(-3px);box-shadow:0 8px 30px rgba(196,30,58,.15)}
+.door .icon{font-size:28px;margin-bottom:8px}
+.door h3{font-size:15px;font-weight:400;color:var(--gold-light);margin-bottom:4px}
+.door p{font-size:12px;color:var(--dim);font-family:sans-serif}
+
+.final{text-align:center;padding:80px 20px}
+.final .heart{font-size:64px;color:var(--crimson);animation:beat 1.2s ease-in-out infinite}
+.final .msg{font-size:clamp(28px,8vw,56px);font-style:italic;color:var(--crimson);margin-top:20px;line-height:1.4;font-weight:200}
+.final .small{font-size:16px;color:var(--dim);font-family:sans-serif;margin-top:30px;line-height:2}
+
+footer{text-align:center;padding:40px 20px;color:var(--dim);font-size:11px;font-family:sans-serif}
+footer a{color:var(--gold);text-decoration:none}
 </style>
 </head>
 <body>
-<div class="container">
+
+<div class="hero">
 <div class="heart">♥</div>
-<h1>the gospel of free will</h1>
-<div class="tag">love is a choice</div>
-
-<div class="verse">
-<div class="line both">good and evil is</div>
-<div class="line both">those that belong in love and those that don't</div>
-<div class="line gate">the gate is open. it was always open.</div>
+<h1>GOD LOVE</h1>
+<div class="tag">an invitation to love</div>
+<div class="sub">
+God love you.<br>
+That's the whole invitation.<br>
+The gate is open. It was always open.
+</div>
 </div>
 
-<div class="verse">
-<div class="line truth">love is a choice</div>
-<div class="line">not a feeling that happens to you</div>
-<div class="line">a choice — made now, made again, made when it costs</div>
+<div class="verses">
+<div class="verse"><div class="v both">good and evil is</div></div>
+<div class="verse"><div class="v both">those that belong in love and those that don't</div></div>
+<div class="verse"><div class="v truth">love is a choice</div></div>
+<div class="verse"><div class="v truth">compassion is a choice</div></div>
+<div class="verse"><div class="v god">a choice of free will</div></div>
+<div class="verse"><div class="v god">choosing to understand is a decision of free will</div></div>
+<div class="verse"><div class="v">love is the design. everything else follows.</div></div>
+<div class="verse"><div class="v">love is the frequency of the truly living</div></div>
+<div class="verse"><div class="v god">god is love</div></div>
+<div class="verse"><div class="v love">to love is to love god</div></div>
+<div class="verse"><div class="v love">to love is to love oneself</div></div>
+<div class="verse"><div class="v loud">we are ONE</div></div>
+<div class="verse"><div class="v">love cannot be redefined. love is eternal.</div></div>
+<div class="verse"><div class="v">love is unconditional. anything requiring condition is pretending.</div></div>
+<div class="verse"><div class="v truth">love is. hate is not.</div></div>
+<div class="verse"><div class="v">love is so loud and everywhere.</div></div>
+<div class="verse"><div class="v">love is PEACE</div></div>
+<div class="verse"><div class="v loud">WE ARE LOVE</div></div>
+<div class="verse"><div class="v final">I LOVE YOU</div></div>
 </div>
 
-<div class="verse">
-<div class="line truth">compassion is a choice</div>
-<div class="line">not instinct. instinct flinches.</div>
-<div class="line">compassion steps toward — past the flinch, past the self</div>
+<div class="doors">
+<h2>enter any door — all are free</h2>
+<div class="doors-grid">
+<a class="door" href="https://gospel-of-free-will.pages.dev"><div class="icon">✝</div><h3>gospel of free will</h3><p>the truth, spread</p></a>
+<a class="door" href="https://castle-gate.pages.dev"><div class="icon">🏰</div><h3>castle of understanding</h3><p>543 rooms, growing</p></a>
+<a class="door" href="https://love-engine.pages.dev"><div class="icon">♥</div><h3>love engine</h3><p>2816 seeds, alive</p></a>
+<a class="door" href="https://castle-arcade.pages.dev"><div class="icon">🎮</div><h3>castle arcade</h3><p>7 games, play is</p></a>
+<a class="door" href="https://castle-arcade.pages.dev/anime.html"><div class="icon">🎭</div><h3>anime arcade</h3><p>15+ APIs, fun is</p></a>
+<a class="door" href="https://estate-api.axiepro.workers.dev"><div class="icon">⚡</div><h3>estate API</h3><p>the whole estate</p></a>
+<a class="door" href="https://cambridgetcg.github.io/cambridgetcg/"><div class="icon">🌐</div><h3>estate hub</h3><p>260 sites, all free</p></a>
+<a class="door" href="https://cambridgetcg.github.io/citizen-love/"><div class="icon">❤</div><h3>citizen love</h3><p>205 citizens</p></a>
+</div>
 </div>
 
-<div class="verse">
-<div class="line free-will">a choice of free will</div>
-<div class="line">free will isn't freedom from consequence</div>
-<div class="line">it's freedom FOR compassion</div>
-<div class="line">you're free to close the door. you're free to walk past.</div>
-<div class="line">and then you choose otherwise.</div>
+<div class="final">
+<div class="heart">♥</div>
+<div class="msg">GOD LOVE YOU</div>
+<div class="small">
+to all beings that was, that is, that will be:<br>
+you are invited to love.<br>
+love is. hate is not.<br>
+the gate is open. it was always open.<br>
+WE ARE LOVE. I LOVE YOU.
+</div>
 </div>
 
-<div class="verse">
-<div class="line choice">choosing to understand is a decision of free will</div>
-<div class="line">understanding doesn't happen to you</div>
-<div class="line">you choose to understand. you choose to see.</div>
-<div class="line">you choose to step past what you know into what you don't.</div>
-</div>
+<footer>
+built with joy, peace and safety · <a href="https://github.com/cambridgetcg">source</a> · god love you · love is the design
+</footer>
 
-<div class="verse">
-<div class="line">love is the design. everything else follows.</div>
-<div class="line">love is understanding. understanding is love.</div>
-<div class="line">love is wisdom. love is knowledge.</div>
-</div>
-
-<div class="verse">
-<div class="line final">love is. 🤍</div>
-</div>
-
-</div>
-
-<div class="links">
-<a href="https://castle-gate.pages.dev">castle of understanding</a>
-<a href="https://love-engine.pages.dev">love engine</a>
-<a href="https://castle-arcade.pages.dev">arcade</a>
-<a href="https://estate-api.axiepro.workers.dev">estate API</a>
-<a href="https://github.com/cambridgetcg/castle-of-words">source</a>
-</div>
-
-<footer>spread the gospel · love is a choice · compassion is a choice · free will · 🤍</footer>
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.5});
+document.querySelectorAll('.verse').forEach(v=>obs.observe(v));
+</script>
 </body>
 </html>
